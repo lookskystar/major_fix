@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!--框架必需start-->
+	<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+	<script type="text/javascript" src="../js/framework.js"></script>
+	<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+	<link  rel="stylesheet" type="text/css" id="skin"/>
+	<!--框架必需end-->
+	<script type="text/javascript">
+		function selUnit(){
+	      $("#selText").text($("#unitId").val())
+         }
+
+		function toclose(){
+			top.Dialog.close();
+		}
+
+		function open2(){
+			top.Dialog.open({
+				URL:"part/code_list.html",
+				Width:480,
+				Height:220,
+				Title:"故障编码/使用处所列表"
+			});
+		}
+
+		function getSelValue(){
+   		var msg="";
+   		msg=$("#editSel").attr("editValue")
+   		if(msg==""||msg==undefined){
+   			msg=""
+   		}
+   		$("#hitchDesc").val(msg);
+     	}
+	</script>
+</head>
+<body>
+
+<div  style="padding: 5px 5px;overflow: hidden">
+    <table width="100%" align="center" class="tableStyle" >
+        <tr>   
+		        <td rowspan="6">领取记录单</td>
+                <td rowspan="4">计划联</td>
+				<td>配件名称: </td>
+				<td>
+					<input  type="text" name="dictUsers.py" ></input><font color="red">&nbsp;&nbsp;*</font>
+				</td>
+				<td>规格型号: </td>
+				<td>
+					<input  type="text" name="dictUsers.py" ></input><font color="red">&nbsp;&nbsp;*</font>
+				</td>
+		</tr>	
+		<tr>	
+			
+			<td>数&nbsp;&nbsp;量: </td>
+			<td>
+				<input id="count" type="text" name="receipt.product_count" onkeyup="this.value=this.value.replace(/\D/g,'')"/>
+				<font color="red">&nbsp;&nbsp;*</font>
+			</td>
+			<td>单&nbsp;&nbsp;位: </td>
+			<td>
+				<select editable="true" id="editSel" onchange="getSelValue()">
+					     <option value="">个</option>
+					     <option value="">根</option>
+						 <option value="">片</option>
+						 <option value="">对</option>
+			    </select>
+               <input type="hidden" id="hitchDesc" name="tempRepair.hitchDesc"/>
+			</td>
+			
+		</tr>
+		<tr>
+		    <td>计划人: </td>
+			<td>
+				<input  type="text" name="dictUsers.py" ></input>
+			</td>
+		    <td>计划时间: </td>
+			<td>
+				<input type="text" class="Wdate" name="dateFrom" onclick="WdatePicker()" style="width:118px;"></input><font color="red">&nbsp;&nbsp;*</font>
+			</td>
+		</tr>
+		<tr>
+			<td>故障编码/使用处所: </td>
+			<td colspan="3">
+				<input  type="text" name="dictUsers.py" ></input>
+				<input type="button" onclick="open2();" value="选择编码" readonly="readonly"/></input><font color="red">&nbsp;&nbsp;*</font>
+			</td>
+        </tr>
+		<tr>
+		    <td rowspan="2">确认联</td>
+		    <td>领取人: </td>
+			<td>
+				<input  type="text" name="dictUsers.py" ></input>
+			</td>
+            <td>领取时间: </td>
+			<td>
+				<input type="text" class="Wdate" name="dateFrom" onclick="WdatePicker()" style="width:118px;"></input><font color="red">&nbsp;&nbsp;*</font>
+			</td>
+		</tr>
+		<tr>	
+			<td>备&nbsp;&nbsp;注: </td>
+			<td colspan="3">
+				<textarea name="receipt.comment" style="width: 800px;height: 60px;"></textarea>
+			</td>
+        </tr>
+		<tr><td colspan="6"></td></tr>
+        <tr>
+        	<td rowspan="6">材料加工/修配计划单(委外加工)</td>
+            <td rowspan="4">计划联</td>
+            	<td>加工件名称: </td>
+				<td>
+					<input  type="text" name="dictUsers.py" ></input><font color="red">&nbsp;&nbsp;*</font>
+				</td>
+				<td>规格型号: </td>
+				<td>
+					<input  type="text" name="dictUsers.py" ></input><font color="red">&nbsp;&nbsp;*</font>
+				</td>
+		</tr>	
+		<tr>	
+			
+			<td>数&nbsp;&nbsp;量: </td>
+			<td>
+				<input id="count" type="text" name="receipt.product_count" onkeyup="this.value=this.value.replace(/\D/g,'')"/>
+				<font color="red">&nbsp;&nbsp;*</font>
+			</td>
+			<td>单&nbsp;&nbsp;位: </td>
+			<td>
+				<select editable="true" id="editSel" onchange="getSelValue()">
+					     <option value="">个</option>
+					     <option value="">根</option>
+						 <option value="">片</option>
+						 <option value="">对</option>
+			    </select>
+               <input type="hidden" id="hitchDesc" name="tempRepair.hitchDesc"/>
+			</td>
+		</tr>
+		<tr>
+		    <td>计划人: </td>
+			<td>
+				<input  type="text" name="dictUsers.py" ></input>
+			</td>
+		    <td>计划时间: </td>
+			<td>
+				<input type="text" class="Wdate" name="dateFrom" onclick="WdatePicker()" style="width:118px;"></input><font color="red">&nbsp;&nbsp;*</font>
+			</td>
+			
+        </tr>
+		<tr>
+		   <td>故障编码/使用处所: </td>
+			<td>
+				<input  type="text" name="dictUsers.py" ></input>
+				<input type="button" onclick="open2();" value="选择编码" readonly="readonly"/></input><font color="red">&nbsp;&nbsp;*</font>
+			</td>
+		   <td>加工/修配: </td>
+			<td >
+				<input  type="text" name="dictUsers.py" ></input>
+			</td>
+		</tr>
+		<tr>
+		    <td rowspan="2">确认联</td>
+		    <td>领取人: </td>
+			<td>
+				<input  type="text" name="dictUsers.py" ></input>
+			</td>
+            <td>领取时间: </td>
+			<td>
+				<input type="text" class="Wdate" name="dateFrom" onclick="WdatePicker()" style="width:118px;"></input><font color="red">&nbsp;&nbsp;*</font>
+			</td>
+		</tr>
+		<tr>	
+			<td>备&nbsp;&nbsp;注: </td>
+			<td colspan="3">
+				<textarea name="receipt.comment" style="width: 800px;height: 60px;"></textarea>
+			</td>
+        </tr>
+		<tr></tr>
+			<tr>
+				<td colspan="8" align="center">
+				<br/>
+					<button onclick="tosave();"><span class="icon_save">提交</span></button>&nbsp;&nbsp;&nbsp;&nbsp;
+					<button onclick="toclose();"><span class="icon_mark">关闭</span></button>
+				</td>
+			</tr>
+    </table>
+</div>
+<script type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script>
+</body>
+</html>

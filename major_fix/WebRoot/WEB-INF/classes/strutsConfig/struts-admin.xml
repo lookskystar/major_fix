@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="admin" namespace="/" extends="common">
+		<!-- User -->
+		<action name="userAction" class="userAction">
+	  		<result name="success">/main.html</result>
+	  	</action>
+	  	
+	  	<!-- Position -->
+	  	<action name="positionAction" class="positionAction">
+	  		<result name="position:list:grid">/jsp/admin/position/position_list_grid.jsp</result>
+	  		<result name="position:edit:show">/jsp/admin/position/position_edit.jsp</result>
+	  		<result name="position:view">/jsp/admin/position/position_view.jsp</result>
+	  	</action>
+	</package>
+</struts>

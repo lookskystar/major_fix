@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/framework.js"></script>
+<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link  rel="stylesheet" type="text/css" id="skin"/>
+<!--框架必需end-->
+
+<!--修正IE6不支持PNG图start-->
+<script type="text/javascript" src="../js/method/pngFix/supersleight.js"></script>
+<!--修正IE6不支持PNG图end-->
+	<script type="text/javascript" src="../js/attention/zDialog/zDrag.js"></script>
+	<script type="text/javascript" src="../js/attention/zDialog/zDialog.js"></script>
+
+<!--鼠标移入变色start-->
+<script type="text/javascript">
+	$(function(){
+		$(".navIcon").hover(function(){
+			$(this).addClass("navIcon_hover");
+		},function(){
+			$(this).removeClass("navIcon_hover");
+		})
+	})
+
+    //计划制定
+	function addPlan(){
+	   top.Dialog.open({URL:"plan/make_product_day_plan.html",Width:'100',Height:'100',Title:"添加计划"});
+	}
+
+    //计划审核
+	function checkPlan(){
+	   top.Dialog.confirm("确认要对计划进行审核吗?",function(){
+	     top.Dialog.alert("计划审核成功!");
+	   });
+	}
+
+	//计划发布
+	function publishPlan(){
+	   top.Dialog.confirm("确认要对计划进行发布吗?",function(){
+	     top.Dialog.alert("计划发布成功!");
+	   });
+	}
+
+    //修改每日生产计划
+	function updateDayPlan(){
+	    top.Dialog.open({URL:"plan/update_product_day_plan.html",Width:600,Height:400,Title:"修改每日生产计划"});
+	}
+</script>
+<!--鼠标移入变色end-->
+<body>
+<div class="box4" panelTitle="功能操作" panelHeight="60">
+   &nbsp;&nbsp;&nbsp;
+   <button onclick="addPlan();"><span class="icon_add">计划制定</span></button>&nbsp;&nbsp;
+   <button onclick="checkPlan();"><span class="icon_edit">计划审核</span></button>&nbsp;&nbsp;
+   <button onclick="publishPlan();"><span class="icon_ok">计划发布</span></button>&nbsp;&nbsp;
+   <span style="padding-left:80px;">
+           请选择日期：
+	<input type="text" id="time" name="time" class="Wdate" onclick="WdatePicker(({dateFmt:'yyyy-MM-dd'}))" style="width:100px;" value="2014-01-16"/>&nbsp;&nbsp;&nbsp;
+             交车组：<input type="text"/>&nbsp;&nbsp;&nbsp;
+	车号：<input type="text"/>&nbsp;&nbsp;&nbsp;
+	责任班组：<input type="text"/>&nbsp;&nbsp;&nbsp;
+	<input type="button" value="每日生产计划查询"/>
+   </span>
+</div>
+<div id="scrollContent">
+  <div class="box1">
+    <span style="color:red;">计划人：田理&nbsp;&nbsp;计划时间：2014-01-22&nbsp;&nbsp;车间审核：朱伟&nbsp;&nbsp;审核时间：2014-01-26</span>
+    <table class="tableStyle"   headFixMode="true" useMultColor="true">
+        <tr>
+            <th width="5%" align="center">交车组</th>
+			<th width="5%" align="center">车号</th>
+			<th width="10%" align="center">计划工作项目</th>
+			<th width="5%" align="center">责任班组</th>
+            <th width="8%" align="center">计划工时(人*工时)</th>
+            <th width="10%" align="center">计划内工作完成情况</th>
+            <th width="10%" align="center">未完成工作原因</th>
+			<th width="6%" align="center">备注</th>
+			<th width="10%" align="center">其他信息</th>
+			<th width="5%" align="center">操作</th>
+        </tr>
+		<tr>
+		    <td align="center">维十六</td>
+			<td align="center">13030</td>
+			<td align="center">传动轴脱漆、打磨，探伤后刷漆</td>
+			<td align="center">维16队</td>
+			<td align="center">4*2</td>
+			<td align="center"><font color="red">未完成</font></td>
+			<td align="center">技术协助</td>
+			<td align="center"></td>
+			<td align="center"><a href="#" title="计划外完成工作项目:第二天需要协助的工作项目:" style="color:blue;">移入鼠标查看</a></td>
+			<td align="center"><a href="javascript:void(0);" onclick="updateDayPlan();" style="color:blue;">修改</a></td>
+		</tr>
+		<tr>
+		    <td align="center">维十六</td>
+			<td align="center">13030</td>
+			<td align="center">拆卸制动梁</td>
+			<td align="center">维16队</td>
+			<td align="center">4*4</td>
+			<td align="center">已完成,使用工时:5人*小时</td>
+			<td align="center"></td>
+			<td align="center"></td>
+	        <td align="center"><a href="#" title="计划外完成工作项目:第二天需要协助的工作项目:" style="color:blue;">移入鼠标查看</a></td>
+			<td align="center"><a href="javascript:void(0);" onclick="updateDayPlan();" style="color:blue;">修改</a></td>
+		</tr>
+		<tr>
+		    <td align="center">维十六</td>
+			<td align="center">13031</td>
+			<td align="center">传动轴脱漆、打磨，探伤后刷漆</td>
+			<td align="center">维16队</td>
+			<td align="center">4*2</td>
+			<td align="center"><font color="red">未完成</font></td>
+			<td align="center">工时不够</td>
+			<td align="center"></td>
+			<td align="center"><a href="#" title="计划外完成工作项目:第二天需要协助的工作项目:" style="color:blue;">移入鼠标查看</a></td>
+			<td align="center"><a href="javascript:void(0);" onclick="updateDayPlan();" style="color:blue;">修改</a></td>
+		</tr>
+		<tr>
+		    <td align="center">维十六</td>
+			<td align="center">13031</td>
+			<td align="center">拆卸制动梁</td>
+			<td align="center">维16队</td>
+			<td align="center">4*4</td>
+			<td align="center">已完成,使用工时:4人*小时</td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td align="center"><a href="#" title="计划外完成工作项目:项目1,第二天需要协助的工作项目:测试项目" style="color:blue;">移入鼠标查看</a></td>
+			<td align="center"><a href="javascript:void(0);" onclick="updateDayPlan();" style="color:blue;">修改</a></td>
+		</tr>
+	</table>
+  </div>
+</div>
+<link href="../js/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script>
+</body>
+</html>

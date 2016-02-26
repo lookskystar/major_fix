@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/framework.js"></script>
+<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" id="skin"/>
+<!--框架必需end-->
+
+<!--修正IE6不支持PNG图start-->
+<script type="text/javascript" src="../js/method/pngFix/supersleight.js"></script>
+<!--修正IE6不支持PNG图end-->
+<script type="text/javascript" src="../js/attention/zDialog/zDrag.js"></script>
+<script type="text/javascript" src="../js/attention/zDialog/zDialog.js"></script>
+
+<!--鼠标移入变色start-->
+<script type="text/javascript">
+	$(function(){
+		$(".navIcon").hover(function(){
+			$(this).addClass("navIcon_hover");
+		},function(){
+			$(this).removeClass("navIcon_hover");
+		})
+	})
+
+    //计划制定
+	function addPlan(){
+	   top.Dialog.open({URL:"plan/make_month_plan.html",Width:'100',Height:'100',Title:"添加计划"});
+	}
+
+    //计划审核
+	function checkPlan(){
+	   top.Dialog.confirm("确认要对计划进行审核吗?",function(){
+	     top.Dialog.alert("计划审核成功!");
+	   });
+	}
+
+	//计划发布
+	function publishPlan(){
+	   top.Dialog.confirm("确认要对计划进行发布吗?",function(){
+	     top.Dialog.alert("计划发布成功!");
+	   });
+	}
+</script>
+<!--鼠标移入变色end-->
+<body>
+<div class="box4" panelTitle="功能操作" panelHeight="60">
+   &nbsp;&nbsp;&nbsp;
+   <button onclick="addPlan();"><span class="icon_add">计划制定</span></button>&nbsp;&nbsp;
+   <button><span class="icon_xls">Excel导入</span></button>&nbsp;&nbsp;
+   <button onclick="checkPlan();"><span class="icon_edit">计划审核</span></button>&nbsp;&nbsp;
+   <button onclick="publishPlan();"><span class="icon_ok">计划发布</span></button>&nbsp;&nbsp;
+   <button><span class="icon_xls">Excel导出</span></button>&nbsp;&nbsp;
+   <span style="padding-left:100px;">
+    请选择日期：
+	<input type="text" id="time" name="time" class="Wdate" onclick="WdatePicker(({dateFmt:'yyyy-MM'}))" style="width:100px;" value="2014-01"/>&nbsp;&nbsp;&nbsp;
+	<input type="button" value="计划查询"/>
+   </span>
+</div>
+
+<div id="scrollContent">
+  <div class="box1">
+    <span style="color:red;">计划标题：2014年1月份检修月计划&nbsp;&nbsp;计划时间：2014-01-23&nbsp;&nbsp;发布人：田理&nbsp;&nbsp;审核人：朱伟&nbsp;&nbsp;状态：已审核</span>
+    <table class="tableStyle"   headFixMode="true" useMultColor="true">
+        <tr>
+            <th width="4%" align="center">序号</th>
+            <th width="12%" align="center">车间</th>
+            <th width="10%" align="center">车队</th>
+			<th width="15%" align="center">车号</th>
+			<th width="9%" align="center">车型</th>
+			<th width="9%" align="center">批次</th>
+            <th width="15%" align="center">上次年修时间</th>
+            <th width="15%" align="center">预计出库时间</th>
+            <th width="20%" align="center">备注</th>
+        </tr>
+		<tr>
+		    <td align="center">1</td>
+			<td align="center" rowspan="4">清筛二车间</td>
+			<td align="center" rowspan="4">大机队</td>
+			<td align="center">13062</td>
+			<td align="center">DC-32</td>
+			<td align="center">第一批</td>
+			<td align="center">2013-03-07</td>
+			<td align="center">2014-02-16</td>
+			<td align="center">架修</td>
+		</tr>
+		<tr>
+		    <td align="center">2</td>
+			<td align="center">13053</td>
+			<td align="center">DC-32</td>
+			<td align="center">第一批</td>
+			<td align="center">2013-03-08</td>
+			<td align="center">2014-03-16</td>
+			<td align="center">架修</td>
+		</tr>
+		<tr>
+		    <td align="center">3</td>
+			<td align="center">13054</td>
+			<td align="center">DC-32</td>
+			<td align="center">第一批</td>
+			<td align="center">2013-03-08</td>
+			<td align="center">2014-03-16</td>
+			<td align="center">架修</td>
+		</tr>
+		<tr>
+		    <td align="center">4</td>
+			<td align="center">13057</td>
+			<td align="center">DC-32</td>
+			<td align="center">第二批</td>
+			<td align="center">2013-02-08</td>
+			<td align="center">2014-02-15</td>
+			<td align="center"></td>
+		</tr>
+		<tr>
+		    <td align="center">5</td>
+			<td align="center" rowspan="4">清筛三车间</td>
+			<td align="center" rowspan="4">大机队</td>
+			<td align="center">13062</td>
+			<td align="center">DC-32</td>
+			<td align="center">第二批</td>
+			<td align="center">2013-03-07</td>
+			<td align="center">2014-02-16</td>
+			<td align="center">架修</td>
+		</tr>
+		<tr>
+		    <td align="center">6</td>
+			<td align="center">13053</td>
+			<td align="center">DC-32</td>
+			<td align="center">第一批</td>
+			<td align="center">2013-03-08</td>
+			<td align="center">2014-03-16</td>
+			<td align="center">架修</td>
+		</tr>
+		<tr>
+		    <td align="center">7</td>
+			<td align="center">13054</td>
+			<td align="center">DC-32</td>
+			<td align="center">第二批</td>
+			<td align="center">2013-03-08</td>
+			<td align="center">2014-03-16</td>
+			<td align="center">架修</td>
+		</tr>
+		<tr>
+		    <td align="center">8</td>
+			<td align="center">13057</td>
+			<td align="center">DC-32</td>
+			<td align="center">第三批</td>
+			<td align="center">2013-02-08</td>
+			<td align="center">2014-02-15</td>
+			<td align="center"></td>
+		</tr>
+		<tr>
+		    <td align="center">9</td>
+			<td align="center" rowspan="6">道岔捣固车间</td>
+			<td align="center" rowspan="2">道岔1队</td>
+			<td align="center">13062</td>
+			<td align="center">DC-32</td>
+			<td align="center">第二批</td>
+			<td align="center">2013-03-07</td>
+			<td align="center">2014-02-16</td>
+			<td align="center">架修</td>
+		</tr>
+		<tr>
+		    <td align="center">10</td>
+			<td align="center">13053</td>
+			<td align="center">DC-32</td>
+			<td align="center">第三批</td>
+			<td align="center">2013-03-08</td>
+			<td align="center">2014-03-16</td>
+			<td align="center">架修</td>
+		</tr>
+		<tr>
+		    <td align="center">11</td>
+			<td align="center" rowspan="4">道岔2队</td>
+			<td align="center">13062</td>
+			<td align="center">DC-32</td>
+			<td align="center">第三批</td>
+			<td align="center">2013-03-07</td>
+			<td align="center">2014-02-16</td>
+			<td align="center"></td>
+		</tr>
+		<tr>
+		    <td align="center">12</td>
+			<td align="center">13053</td>
+			<td align="center">DC-32</td>
+			<td align="center">第三批</td>
+			<td align="center">2013-03-08</td>
+			<td align="center">2014-03-16</td>
+			<td align="center">架修</td>
+		</tr>
+		<tr>
+		    <td align="center">13</td>
+			<td align="center">13062</td>
+			<td align="center">DC-32</td>
+			<td align="center">第三批</td>
+			<td align="center">2013-03-07</td>
+			<td align="center">2014-02-16</td>
+			<td align="center"></td>
+		</tr>
+		<tr>
+		    <td align="center">14</td>
+			<td align="center">13053</td>
+			<td align="center">DC-32</td>
+			<td align="center">第三批</td>
+			<td align="center">2013-03-08</td>
+			<td align="center">2014-03-16</td>
+			<td align="center">架修</td>
+		</tr>
+	</table>
+  </div>
+</div>
+<link href="../js/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script>
+</body>
+</html>

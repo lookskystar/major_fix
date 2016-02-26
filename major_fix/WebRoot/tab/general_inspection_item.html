@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/framework.js"></script>
+<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link  rel="stylesheet" type="text/css" id="skin"/>
+<!--框架必需end-->
+
+<!--树形表格start-->
+<script type="text/javascript" src="../js/table/treeTable.js"></script>
+<!--树形表格end-->
+<body>
+<div id="scrollContent">
+	<div>
+		<button id="sign" style="float: left;margin: 5px 5px 5px 5px;"><span class="icon_edit" >项目签认</span></button>
+		<button id="singAll" style="float: left;margin: 5px 5px 5px 0px;"><span class="icon_mark" >项目全签</span></button>
+		<button id="remove" style="float: left;margin: 5px 5px 5px 0px;"><span class="icon_remove" >撤销签认</span></button>
+	</div>
+	<table class="treeTable" initState="collapsed">
+		<tr>
+			<th width="250">预设分类/项目名称</th>
+			<th width="120">检修情况</th>
+			<th width="120">检修人/时间</th>
+		</tr>
+		<tr id="node-1">
+			<td><input type="checkbox" /><span class="folder">风表、传感器检测</span></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr id="node-2" class="child-of-node-1">
+			<td><input type="checkbox" /><span class="file">项目1</span><span class="img_light" title="安全操作提示"></td>
+			<td name="inspectionTd" style="text-align: center;">良好</td>
+			<td style="text-align: center;">张三    2014-02-11 12:00:00</td>
+		</tr>
+		<tr id="node-3" class="child-of-node-1">
+			<td><input type="checkbox" /><span class="file">项目2</span><span class="img_light" title="安全操作提示"></td>
+			<td name="inspectionTd" style="text-align: center;">良好</td>
+			<td style="text-align: center;">张三    2014-02-11 12:00:00</td>
+		</tr>
+		<tr id="node-4" class="child-of-node-1">
+			<td><input type="checkbox" /><span class="file">项目3</span><span class="img_light" title="安全操作提示"></td>
+			<td name="inspectionTd" style="text-align: center;">良好</td>
+			<td style="text-align: center;">张三    2014-02-11 12:00:00</td>
+		</tr>
+		<tr id="node-5" class="child-of-node-1">
+			<td><input type="checkbox" /><span class="file">项目4</span><span class="img_light" title="安全操作提示"></td>
+			<td name="inspectionTd" style="text-align: center;">良好</td>
+			<td style="text-align: center;">张三    2014-02-11 12:00:00</td>
+		</tr>
+		<tr id="node-6" class="child-of-node-1">
+			<td><input type="checkbox" /><span class="file">项目5</span><span class="img_light" title="安全操作提示"></td>
+			<td name="inspectionTd" style="text-align: center;">良好</td>
+			<td style="text-align: center;">张三    2014-02-11 12:00:00</td>
+		</tr>
+		<tr id="node-11">
+			<td><input type="checkbox" /><span class="folder">空压机打风</span></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr id="node-7" class="child-of-node-11">
+			<td><input type="checkbox" /><span class="file">项目1</span><span class="img_light" title="安全操作提示"></td>
+			<td name="inspectionTd" style="text-align: center;">良好</td>
+			<td style="text-align: center;">张三    2014-02-11 12:00:00</td>
+		</tr>
+		<tr id="node-8" class="child-of-node-11">
+			<td><input type="checkbox" /><span class="file">项目2</span><span class="img_light" title="安全操作提示"></td>
+			<td name="inspectionTd" style="text-align: center;">良好</td>
+			<td style="text-align: center;">张三    2014-02-11 12:00:00</td>
+		</tr>
+		<tr id="node-9" class="child-of-node-11">
+			<td><input type="checkbox" /><span class="file">项目3</span><span class="img_light" title="安全操作提示"></td>
+			<td name="inspectionTd" style="text-align: center;">良好</td>
+			<td style="text-align: center;">张三    2014-02-11 12:00:00</td>
+		</tr>
+		<tr id="node-10" class="child-of-node-11">
+			<td><input type="checkbox" /><span class="file">项目4</span><span class="img_light" title="安全操作提示"></td>
+			<td name="inspectionTd" style="text-align: center;">良好</td>
+			<td style="text-align: center;">张三    2014-02-11 12:00:00</td>
+		</tr>
+		<tr id="node-12" class="child-of-node-11">
+			<td><input type="checkbox" /><span class="file">项目5</span><span class="img_light" title="安全操作提示"></td>
+			<td name="inspectionTd" style="text-align: center;">良好</td>
+			<td style="text-align: center;">张三    2014-02-11 12:00:00</td>
+		</tr>
+		<tr id="node-13" class="child-of-node-11">
+			<td><input type="checkbox" /><span class="file">项目6</span><span class="img_light" title="安全操作提示"></td>
+			<td name="inspectionTd" style="text-align: center;">良好</td>
+			<td style="text-align: center;">张三    2014-02-11 12:00:00</td>
+		</tr>
+		<tr id="node-14" class="child-of-node-11">
+			<td><input type="checkbox" /><span class="file">项目7</span><span class="img_light" title="安全操作提示"></td>
+			<td name="inspectionTd" style="text-align: center;">良好</td>
+			<td style="text-align: center;">张三    2014-02-11 12:00:00</td>
+		</tr>
+		<tr id="node-12" class="child-of-node-11">
+			<td><input type="checkbox" /><span class="file">项目5</span><span class="img_light" title="安全操作提示"></td>
+			<td name="inspectionTd" style="text-align: center;">良好</td>
+			<td style="text-align: center;">张三    2014-02-11 12:00:00</td>
+		</tr>
+		<tr id="node-13" class="child-of-node-11">
+			<td><input type="checkbox" /><span class="file">项目6</span><span class="img_light" title="安全操作提示"></td>
+			<td name="inspectionTd" style="text-align: center;">良好</td>
+			<td style="text-align: center;">张三    2014-02-11 12:00:00</td>
+		</tr>
+		<tr id="node-14" class="child-of-node-11">
+			<td><input type="checkbox" /><span class="file">项目7</span><span class="img_light" title="安全操作提示"></td>
+			<td name="inspectionTd" style="text-align: center;">良好</td>
+			<td style="text-align: center;">张三    2014-02-11 12:00:00</td>
+		</tr>
+	</table>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../js/jquery.appendDom.js"></script>
+<script>
+	$(function(){
+			$('head').appendDom([{tagName  :'script',type : 'text/javascript',src : '../js/hl/highlight.js'}]);
+			$('head').appendDom([{tagName  :'script',type : 'text/javascript',src : '../js/hl/lang-xml.js'}]);
+			$('head').appendDom([{tagName  :'script',type : 'text/javascript',src : '../js/hl/lang-html.js'}]);
+			$('head').appendDom([{tagName  :'link', rel : 'stylesheet',type:'text/css',src : '../js/hl/style.css'}]);
+			setTimeout(showCode,1000)
+
+
+			//撤销签认
+			$("#remove").bind('click', function(){
+				$("input[type=checkbox]:checked").each(function(){
+					var parent = $(this).parent();
+					var parentNextTd = $(parent).next();
+					$(parentNextTd).text("");
+					var parentAfterNextTd = $(parentNextTd).next();
+					$(parentAfterNextTd).text("");
+					//后台数据撤销
+					//doSomething
+				})
+			})
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

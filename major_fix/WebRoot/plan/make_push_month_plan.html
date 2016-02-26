@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/framework.js"></script>
+<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link  rel="stylesheet" type="text/css" id="skin"/>
+<!--框架必需end-->
+
+<!--修正IE6不支持PNG图start-->
+<script type="text/javascript" src="../js/method/pngFix/supersleight.js"></script>
+<!--修正IE6不支持PNG图end-->
+
+<!--鼠标移入变色start-->
+<script>
+	$(function(){
+		$(".navIcon").hover(function(){
+			$(this).addClass("navIcon_hover");
+		},function(){
+			$(this).removeClass("navIcon_hover");
+		})
+
+		$("#copyBtn").live("click",function(){
+				//克隆按钮所在的tr并添加到table的末尾
+				$(this).parents("tr").clone(true).appendTo($(this).parents("table"))
+				//找到table最后一个tr的最后一个td中的button按钮
+				var $lastBtn=$(this).parents("table").find("tr").last().find("td").last().find("input[type='button']");
+				//更改按钮的显示文字
+				$lastBtn.val("删除");
+				//修正按钮在复制时产生的样式错误
+				$lastBtn.removeClass("button_hover");
+				$lastBtn.addClass("button")
+				//对该按钮重新监听点击事件
+				$lastBtn.click(function(e){
+					//阻止默认行为，即复制行为
+					e.stopPropagation();
+					//将所在的行删除
+					$(this).parents("tr").remove()
+				})
+		})
+	})
+
+    function addMulPlan(){
+	   var num=$("#num").val();
+	   if(num==""){
+	      top.Dialog.alert("请填写要添加计划的数量!",function(){
+		     $("#num").focus();
+		  });
+	   }else{
+	      for(var i=0;i<num;i++){
+		        //克隆按钮所在的tr并添加到table的末尾
+				$("#copyBtn").parents("tr").clone(true).appendTo($("#copyBtn").parents("table"))
+				//找到table最后一个tr的最后一个td中的button按钮
+				var $lastBtn=$("#copyBtn").parents("table").find("tr").last().find("td").last().find("input[type='button']");
+				//更改按钮的显示文字
+				$lastBtn.val("删除");
+				//修正按钮在复制时产生的样式错误
+				$lastBtn.removeClass("button_hover");
+				$lastBtn.addClass("button")
+				//对该按钮重新监听点击事件
+				$lastBtn.click(function(e){
+					//阻止默认行为，即复制行为
+					e.stopPropagation();
+					//将所在的行删除
+					$(this).parents("tr").remove()
+				})
+		  }
+	   }
+	}
+
+</script>
+<!--鼠标移入变色end-->
+<body>
+<div class="position">
+	<div class="center">
+	<div class="left">
+	<div class="right">
+		<span>当前机车信息:车间：清筛二车间&nbsp;&nbsp;车队:大机队&nbsp;&nbsp;车号:13062&nbsp;&nbsp;车型:DC-32&nbsp;&nbsp;
+               请选择日期：
+			   <input type="text" id="time" name="time" class="Wdate" onclick="WdatePicker(({dateFmt:'yyyy-MM'}))" style="width:120px;" value="2014-01"/>&nbsp;&nbsp;
+			    计划数量:<input type="text" style="width:50px;" onkeyup="this.value=this.value.replace(/\D/g,'')" id="num"/>
+			   <input type="button" value="批量添加计划" onclick="addMulPlan();"/>
+		</span>
+	</div>	
+	</div>	
+	</div>
+</div>	
+  <div id="scrollContent">
+     <table class="tableStyle"   headFixMode="true" useMultColor="true">
+	    <tr>
+		  <th width="15%" align="center">起始日期</th>
+		  <th width="15%" align="center">结束日期</th>
+		  <th align="center">工作内容</th>
+		  <th align="center">操作</th>
+		</tr>
+		<tr>
+		  <td align="center">
+		    <input type="text" id="time" name="time" class="Wdate" onclick="WdatePicker(({dateFmt:'yyyy-MM-dd'}))" style="width:100px;"/>
+		  </td>
+		  <td align="center">
+		    <input type="text" id="time" name="time" class="Wdate" onclick="WdatePicker(({dateFmt:'yyyy-MM-dd'}))" style="width:100px;"/>
+		  </td>
+		  <td align="center"><input type="text" style="width:800px;"/></td>
+		  <td align="center"><input type="button" value="添加" id="copyBtn"/></td>
+		</tr>
+	 </table>
+  </div>
+  <div>
+	 <table class="tableStyle"   headFixMode="true" useMultColor="true">
+	     <tr>
+			<td colspan="9" align="center"><button><span class="icon_ok">确认提交</span></button></td>
+		</tr>
+	 </table>
+  </div>
+  <link href="../js/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/framework.js"></script>
+<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link  rel="stylesheet" type="text/css" id="skin"/>
+<!--框架必需end-->
+
+<script type="text/javascript" src="../js/nav/ddaccordion.js"></script>
+<script type="text/javascript" src="../js/text/text-overflow.js"></script>
+<style>
+a {
+	behavior:url(../js/method/focus.htc)
+}
+.categoryitems span{
+	width:160px;
+}
+</style>
+
+<body leftFrame="true">
+<div id="scrollContent">
+	<div class="arrowlistmenu">
+		<!-- 在修机车列表 start-->
+		<table class="tableStyle">
+			<thead>
+				<tr>
+					<td>车型：</td>
+					<td colspan="3">	
+						<select id="jcTypes" >
+							<option value="1">--请选择--</option>
+							<option value="DC">DC</option>
+							<option value="DCL">DCL</option>
+							<option value="QS">QS</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>车型</th>
+					<th>车号</th>
+					<th>状态</th>
+					<th>备注</th>
+				</tr>
+			</thead>
+			<tbody align="center">
+				<tr>
+					<a href="../right/general_fix.html" style="text-decoration: none;" target="frmright">
+						<td>DC</td>
+						<td>32</td>
+						<td>检修</td>
+						<td>备注</td>
+					</a>
+				</tr>
+				<tr> 
+					<a href="../right/general_fix_headman.html" style="text-decoration: none;" target="frmright">
+						<td>DCL</td>
+						<td>32</td>
+						<td>检修</td>
+						<td>架修</td>
+					</a>
+				</tr>
+				<tr>
+					<a href="../right/general_fix_checkman.html" style="text-decoration: none;" target="frmright">
+						<td>QS</td>
+						<td>650</td>
+						<td>检修</td>
+						<td>架修</td>
+					</a>
+				</tr>
+				<tr>
+					<a href="../right/general_fix_trial.html" style="text-decoration: none;" target="frmright">
+						<td>DPZ</td>
+						<td>440</td>
+						<td>试验</td>
+						<td>备注</td>
+					</a>
+				</tr>
+			</tbody>
+		</table>
+		<!-- 在修机车列表 end-->
+	</div>	
+</div>			
+</body>
+</html>

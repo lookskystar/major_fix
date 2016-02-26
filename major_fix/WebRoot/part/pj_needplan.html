@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!--框架必需start-->
+	<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+	<script type="text/javascript" src="../js/framework.js"></script>
+	<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+	<link  rel="stylesheet" type="text/css" id="skin" />
+	<!--框架必需end-->
+	<script type="text/javascript" src="../js/attention/zDialog/zDrag.js"></script>
+	<script type="text/javascript" src="../js/attention/zDialog/zDialog.js"></script>
+
+	<script type="text/javascript">
+
+		function addPjplan(){
+			top.Dialog.open({
+				URL:"part/add_pjplan.html",
+				Width:680,
+				Height:360,
+				Title:"新计划"
+			});
+		}
+       
+	   function findDetail(){
+			top.Dialog.open({
+				URL:"part/pjplan_info.html",
+				Width:680,
+				Height:360,
+				Title:"计划详情"
+			});
+		}
+	</script>
+</head>
+<body>
+<div class="box4" panelTitle="配件需求计划列表" roller="false" showStatus="false">
+    	<table>
+         <tr>
+         	<td>配件名称:<input type="text"  style="width: 90px;" /></td>
+			<td>计划人:<input type="text"  style="width: 90px;" /></td>
+           	<td>计划时间:</td>
+        	<td><input type="text" class="Wdate" name="dateFrom" onclick="WdatePicker(({dateFmt:'yyyy-MM-dd'}))" style="width:100px;" value="2014-02-19"/>至</td>
+        	<td><input type="text" class="Wdate" name="dateTo" onclick="WdatePicker(({dateFmt:'yyyy-MM-dd'}))" style="width:100px;" value="2014-02-26"/></td>
+			<td colspan="1"><button type="submit"><span class="icon_find">查询</span></button></td>
+        </tr>
+       <tr>
+			<td colspan="2">
+				<button onclick="addPjplan();"><span class="icon_add">新计划</span></button>&nbsp;&nbsp;
+				<button><span class="icon_xls">导出</span></button>
+			</td>
+		</tr>
+    </table>
+</div>
+<div id="scrollContent">
+    <table class="tableStyle"  useMultColor="true" >
+        <tr>
+            <th width="4%">序号</th>
+            <th width="16%" align="center">配件名称</th>
+            <th width="8%" align="center">规格型号</th>
+			<th width="5%" align="center">数量</th>
+			<th width="9%" align="center">计划人</th>
+            <th width="12%" align="center">计划时间</th>
+			<th width="15%" align="center">故障编码/使用处所</th>
+			<th width="31%" align="center">备注</th>
+
+            
+        </tr>
+        <tr align="center">
+            <td>1</td>
+			<td>制动软管</td>
+			<td>610/660</td>
+			<td>50根</td>
+			<td>何守义</td>
+			<td>2014-1-22</td>
+			<td>DWL用</td>
+            <td></td>
+            
+        </tr>
+    	<tr align="center">
+            <td>2</td>
+			<td>油雾器</td>
+			<td>918-A</td>
+			<td>10个</td>
+			<td>何守义</td>
+			<td>2014-1-22</td>
+			<td>13005</td>
+            <td></td>
+           
+        </tr>
+        <tr align="center">
+            <td>3</td>
+			<td>轮对</td>
+			<td>WD320轴</td>
+			<td>1对</td>
+			<td>何守义</td>
+			<td>2014-1-22</td>
+			<td>DWL用</td>
+            <td></td>
+            
+        </tr>
+        <tr align="center">
+            <td>4</td>
+			<td>离合器片</td>
+			<td>2-05199</td>
+			<td>8片</td>
+			<td>何守义</td>
+			<td>2014-1-22</td>
+			<td>DWL用</td>
+            <td></td>
+           
+        </tr>
+        <tr align="center">
+            <td>5</td>
+			<td>离合器片</td>
+			<td>2-20212</td>
+			<td>9片</td>
+			<td>吴鑫</td>
+			<td>2014-1-22</td>
+			<td>DWL用</td>
+            <td></td>
+           
+        </tr>
+        <tr align="center">
+            <td>6</td>
+			<td>电子摆</td>
+			<td>2036</td>
+			<td>1个</td>
+			<td>吴鑫</td>
+			<td>2014-1-22</td>
+			<td>13101-0-YD-29</td>
+            <td></td>
+            
+        </tr>
+
+    </table>
+</div>
+<script type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script>
+</body>
+</html>

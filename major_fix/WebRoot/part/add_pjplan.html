@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!--框架必需start-->
+	<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+	<script type="text/javascript" src="../js/framework.js"></script>
+	<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+	<link  rel="stylesheet" type="text/css" id="skin"/>
+	<!--框架必需end-->
+	<script type="text/javascript">
+		
+		function toclose(){
+			top.Dialog.close();
+		}
+
+		function getSelValue(){
+   		var msg="";
+   		msg=$("#editSel").attr("editValue")
+   		if(msg==""||msg==undefined){
+   			msg=""
+   		}
+   		$("#hitchDesc").val(msg);
+     	}
+
+		function open2(){
+			top.Dialog.open({
+				URL:"part/code_list.html",
+				Width:480,
+				Height:220,
+				Title:"故障编码/使用处所列表"
+			});
+		}
+	</script>
+</head>
+<body>
+<div>
+	<table class="tableStyle" transMode="true">
+			
+	 		<tr>
+				<td>配件名称: </td>
+				<td>
+					<input  type="text" name="dictUsers.py" ></input><font color="red">&nbsp;&nbsp;*</font>
+				</td>
+				<td>规格型号: </td>
+				<td>
+					<input  type="text" name="dictUsers.py" ></input><font color="red">&nbsp;&nbsp;*</font>
+				</td>
+			</tr>
+			
+		<tr>	
+			
+			<td>数&nbsp;&nbsp;量: </td>
+			<td>
+				<input id="count" type="text" name="receipt.product_count" onkeyup="this.value=this.value.replace(/\D/g,'')"/><font color="red">&nbsp;&nbsp;*</font>
+			</td>
+			<td>计划人: </td>
+			<td>
+				<input  type="text" name="dictUsers.py" ></input>
+			</td>
+		</tr>
+        <tr>
+		    <td>单&nbsp;&nbsp;位: </td>
+			<td>
+				<select editable="true" id="editSel" onchange="getSelValue()">
+					     <option value="">个</option>
+					     <option value="">根</option>
+						 <option value="">片</option>
+						 <option value="">对</option>
+			    </select>
+               <input type="hidden" id="hitchDesc" name="tempRepair.hitchDesc"/>
+			</td>
+			<td>计划时间: </td>
+			<td>
+				<input type="text" class="Wdate" name="dateFrom" onclick="WdatePicker(({dateFmt:'yyyy-MM-dd'}))" style="width:118px;"></input><font color="red">&nbsp;&nbsp;*</font>
+			</td>
+        </tr>
+		<tr>
+		    
+			<td>故障编码/使用处所: </td>
+			<td>
+			<input  type="text" name="dictUsers.py" >
+			<input type="button" onclick="open2();" value="选择编码" readonly="readonly"/></input><font color="red">&nbsp;&nbsp;*</font></td>
+			<td>图&nbsp;&nbsp;片: </td>
+			<td>
+				<input type="file"/>
+			</td>
+        </tr>
+		<tr>	
+			<td>备&nbsp;&nbsp;注: </td>
+			<td>
+				<textarea name="receipt.comment" style="width: 200px;height: 80px;"></textarea>
+			</td>
+        </tr>
+			<tr></tr>
+			<tr>
+				<td colspan="4">
+					<button onclick="tosave();"><span class="icon_save">提交</span></button>&nbsp;&nbsp;&nbsp;&nbsp;
+					<button onclick="toclose();"><span class="icon_mark">关闭</span></button>
+				</td>
+			</tr>
+		</table>
+</div>
+<script type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script>
+</body>
+</html>

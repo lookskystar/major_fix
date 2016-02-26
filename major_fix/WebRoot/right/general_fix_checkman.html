@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/framework.js"></script>
+<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link  rel="stylesheet" type="text/css" id="skin"/>
+<!--框架必需end-->
+
+<script type="text/javascript" src="../js/jquery-ui-1.7.2.custom.min.js"></script>
+<script type="text/javascript" src="../js/nav/jquery.layout.js"></script>
+<script type="text/javascript" src="../js/nav/layout.js"></script>
+
+<!--选项卡start-->
+<script type="text/javascript" src="../js/nav/tab.js"></script>
+<script>
+ var tab;
+ var index=1;
+$( function() {
+	 tab= new TabView( {
+		containerId :'tab_menu',
+		pageid :'page',
+		cid :'tab1',
+		position :"top"
+	});
+	tab.add( {
+		id :'index0',
+		title :"检查项目",
+		url :"../tab/general_inspection_checkman_item.html",
+		isClosed :true
+	});
+});
+function addTab(id,name,url){
+	tab.add( {
+		id :id,
+		title :name,
+		url :url
+	});
+	index++;
+}
+</script>
+<!--选项卡end-->
+<body rel="layout">
+	 <div class="ui-layout-west">
+        <div class="header">QS-650</div>
+	    <div class="content">
+			<div class="list_menu1">
+				<a href="javascript:addTab('index0','检查项目','../tab/general_inspection_checkman_item.html')"><dt><span>检查项目</span></dt></a>
+				<a href="javascript:addTab('index1','检测项目','../tab/general_detection_checkman_item.html')"><dt><span>检测项目</span></dt></a>
+				<a href="javascript:addTab('index2','故障处理','../tab/general_report_item.html')"><dt><span>故障处理</span></dt></a>
+				<a href="javascript:void" onclick="top.Dialog.alert('该机车未流转到试验节点，请先完成检修作业！');"><dt><span>性能试验</span></dt></a>
+				<a href="javascript:addTab('index3','验收单','../tab/fix_accept_tip.html');"><dt><span>验收单</span></dt></a>
+				<a href="javascript:addTab('index4','交车单','../tab/fix_over_tip.html');"><dt><span>交车单</span></dt></a>
+			</div>
+        </div>
+    </div>
+
+    <div class="ui-layout-center">
+		 <div class="subhead" style="height:30px;">
+			<div id="tab_menu"></div>
+		</div>
+        <div class="content">
+			<div id="page" style="width:100%;height:100%;"></div>	
+        </div>
+		
+    </div>
+</body>
+</html>

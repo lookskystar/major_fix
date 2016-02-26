@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="major_fix"
+  id="myeclipse.1391996487405"
+  context-root="/major_fix"
+  j2ee-spec="5.0"
+  archive="major_fix.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+

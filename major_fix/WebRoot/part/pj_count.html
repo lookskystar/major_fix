@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!--框架必需start-->
+	<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+	<script type="text/javascript" src="../js/framework.js"></script>
+	<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+	<link  rel="stylesheet" type="text/css" id="skin" />
+	<!--框架必需end-->
+	<script type="text/javascript" src="../js/attention/zDialog/zDrag.js"></script>
+	<script type="text/javascript" src="../js/attention/zDialog/zDialog.js"></script>
+	<script type="text/javascript" src="../js/table/treeTable.js"></script>
+    <script type="text/javascript">
+		 function selStyle(){
+	      $("#selText").text($("#styleId").val())
+         }
+
+	</script>
+</head>
+<body>
+<div class="box4" panelTitle="配件需求汇总列表" roller="false" showStatus="false">
+    	<table>
+         <tr>
+		    <td>类&nbsp;&nbsp;型:</td>
+			<td>
+				<select id="styleId" onchange='selStyle()' class="default">
+					     <option value="">全部</option>
+					     <option value="">制动系统</option>
+					     <option value="">走行系统</option>
+				</select>
+			</td>
+         	<td>配件名称:<input type="text"  style="width: 90px;" /></td>
+			<td>规格型号:<input type="text"  style="width: 90px;" /></td>
+           	<td>计划时间:</td>
+        	<td><input type="text" class="Wdate" name="dateFrom" onclick="WdatePicker(({dateFmt:'yyyy-MM-dd'}))" style="width:100px;" value="2014-02-19"/>至</td>
+        	<td><input type="text" class="Wdate" name="dateTo" onclick="WdatePicker(({dateFmt:'yyyy-MM-dd'}))" style="width:100px;" value="2014-02-26"/></td>
+			<td colspan="1"><button type="submit"><span class="icon_find">查询</span></button></td>
+        </tr>
+    </table>
+</div>
+<div id="scrollContent">
+<table class="treeTable">
+	<tr>
+	    <th width="80">类型</th>
+		<th width="250">配件名称</th>
+		<th width="200">规格型号</th>
+		<th width="200">需求数量</th>
+		<th>领取数量统计</th>
+	</tr>
+	<tr id="node-1">
+		<td><span class="folder">制动系统</span></td>
+		<td></td>
+		<td></td>
+
+		<td></td>
+		<td></td>
+
+	</tr>
+	<tr id="node-3" class="child-of-node-1">
+		<td></td>
+		<td align="center">制动软管</td>
+		<td align="center">610/660</td>
+
+		<td align="center">4</td>
+		<td align="center">51</td>
+	</tr>
+	<tr id="node-3" class="child-of-node-1">
+		<td></td>
+		<td align="center">离合器片</td>
+		<td align="center">2-05199</td>
+
+		<td align="center">60</td>
+		<td align="center">259</td>
+	</tr>
+	<tr id="node-3" class="child-of-node-1">
+		<td></td>
+		<td align="center">离合器片</td>
+		<td align="center">2-20212</td>
+
+		<td align="center">400</td>
+		<td align="center">1658</td>
+	</tr>
+	<tr id="node-11">
+		<td><span class="folder">走行系统</span></td>
+		<td></td>
+		<td></td>
+
+		<td></td>
+		<td></td>
+	</tr>
+	<tr id="node-12" class="child-of-node-11">
+		<td></td>
+		<td align="center">轮对</td>
+		<td align="center">WD320轴</td>
+
+		<td align="center">3</td>
+		<td align="center">2</td>
+	</tr>
+</table>
+</body>
+</html>

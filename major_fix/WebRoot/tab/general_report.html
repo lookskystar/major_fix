@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/framework.js"></script>
+<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link  rel="stylesheet" type="text/css" id="skin"/>
+<!--框架必需end-->
+
+<!--树形表格start-->
+<script type="text/javascript" src="../js/table/treeTable.js"></script>
+<!--树形表格end-->
+<script type="text/javascript" src="../My97DatePicker/WdatePicker.js"></script>
+<style>
+table tr td{
+	text-align: center;
+}
+</style>
+<body>
+	<div id="scrollContent" style="margin-top: 5px;">
+		<table class="tableStyle">
+			<tr>
+				<td>设备编号</td><td><input type="text" style="width: 250px;"/></td>
+				<td>故障编号</td><td colspan="2"><input type="text" style="width: 250px;"/></td>
+			</tr>
+			<tr>
+				<td>检修项目负责</td><td><input type="text" style="width: 250px;"/></td>
+				<td>检修参与</td><td colspan="2"><input type="text" style="width: 250px;"/></td>
+			</tr>
+			<tr>
+				<td>叉车配合</td><td><input type="text" style="width: 250px;"/></td>
+				<td>天车配合</td><td colspan="2"><input type="text" style="width: 250px;"/></td>
+			</tr>
+			<tr>
+				<td>电焊、氧割配合</td><td><input type="text" style="width: 250px;"/></td>
+				<td>故障照片</td><td colspan="2"><input type="file" style="width: 272px;"/></td>
+			</tr>
+			<tr>
+				<td>检修工时</td><td><input type="text" style="width: 250px;"/></td>
+				<td>完成日期</td><td colspan="2"><input type="text" style="width: 250px;"/></td>
+			</tr>
+			<tr>
+				<td>故障照片</td>
+				<td><textarea rows="" cols=""></textarea></td>
+				<td>故障现象描述</td>
+				<td colspan="2"><textarea rows="" cols=""></textarea></td>
+			</tr>
+			<tr>
+				<td>故障处理方式</td>
+				<td><textarea rows="" cols=""></textarea></td>
+				<td>故障处理结果</td>
+				<td colspan="2"><textarea rows="" cols=""></textarea></td>
+			</tr>
+			<tr>
+				<td rowspan="7">更换配件情况</td>
+				<td>序号</td>
+				<td>名称</td>
+				<td>型号</td>
+				<td>数量</td>
+			</tr>
+			<tr>
+				<td><input type="text" style="width: 260px;"/></td>
+				<td><input type="text" style="width: 130px;"/></td>
+				<td><input type="text" style="width: 130px;"/></td>
+				<td><input type="text" style="width: 130px;"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>自检人</td>
+				<td><input type="text" style="width: 250px;"/></td>
+				<td>验收结果/时间</td>
+				<td colspan="2"><select><option>合格</option><option>不合格</option></select><input type="text" class="Wdate" name="dateFrom" onclick="WdatePicker()" style="width:118px;"/></td>
+			</tr>
+			<tr>
+				<td>互检人</td>
+				<td><input type="text" style="width: 250px;"/></td>
+				<td>验收结果/时间</td>
+				<td colspan="2"><select><option>合格</option><option>不合格</option></select> <input type="text" class="Wdate" name="dateFrom" onclick="WdatePicker()" style="width:118px;"/></td>
+			</tr>
+		</table>
+	</div>
+	<div style="text-align: center;padding-top: 20px;">
+		<input type="submit" value="提交"/>
+		<input type="reset" value="清空"/>
+	</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../js/jquery.appendDom.js"></script>
+<script>
+
+	function isNotEmpty(text){
+		return (text != null && text != "" && text != undefined)? true: false;
+	}
+</script>
+<!--代码高亮end-->
+</html>

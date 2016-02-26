@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/framework.js"></script>
+<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link  rel="stylesheet" type="text/css" id="skin"/>
+<!--框架必需end-->
+<!--截取文字start-->
+<script type="text/javascript" src="../js/text/text-overflow.js"></script>
+<!--截取文字end-->
+<div >
+	<table class="tableStyle" transMode="true">
+		<tr>
+			<td>系统：</td>
+			<td>
+				<select id="sel">
+				    <option value="1">走行系统</option>
+				    <option value="2">制动系统</option>
+				    <option value="3">液压系统</option>
+				 </select>
+			</td>
+		</tr>
+		<tr>
+			<td>部件/部位：</td><td><input type="text"/></td>
+		</tr>
+		<tr>
+			<td>故障现象：</td>
+			<td>
+				<span class="float_left">
+				<textarea></textarea>
+				</span>
+				<span class="img_light" style="height:80px;" title="限制在200字以内"></span>
+			</td>
+		</tr>
+		<tr>
+			<td>建议处理方式：</td><td><input type="text"/></td>
+		</tr>
+		<tr>
+			<td>班组：</td><td><input type="text"/></td>
+		</tr>		
+		<tr>
+			<td colspan="2">
+				<input type="submit" value=" 提 交 "/>
+				<input type="reset" value=" 重 置 "/>
+			</td>
+		</tr>
+	</table>
+</body>

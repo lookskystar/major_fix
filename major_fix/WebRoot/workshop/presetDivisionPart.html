@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/framework.js"></script>
+<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link  rel="stylesheet" type="text/css" id="skin"/>
+<!--框架必需end-->
+<script type="text/javascript" src="../js/tree/dtree/dtree.js"></script>
+<link href="../js/tree/dtree/dtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../js/nav/ddaccordion.js"></script>
+<script type="text/javascript" src="../js/text/text-overflow.js"></script>
+<style>
+a {
+	behavior:url(../js/method/focus.htc)
+}
+.categoryitems span{
+	width:160px;
+}
+</style>
+<script type="text/javascript">
+		//新增
+		function toAdd(){
+			top.Dialog.open({
+				URL:"workshop/addPreset.html",
+				Width:600,
+				Height:300,
+				Title:"新增分类"
+			});
+		}
+		
+		//删除
+		function delPreset(){
+		   top.Dialog.confirm("确认要删除该分工?",function(){
+		     top.Dialog.alert("删除成功!");
+		   });
+		}
+		
+		//修改
+		function updPreset(){
+			top.Dialog.open({
+				URL:"workshop/aditePreset.html",
+				Width:600,
+				Height:300,
+				Title:"修改分类"
+			});
+		}	
+		
+		//保存关系
+		function savePresetItem(){
+		     top.Dialog.alert("保存成功!");
+		}
+		
+	</script>
+<body>
+ 	<table width="100%" align="left">
+ 		<tr>
+ 			<td width="320px">
+		 		<div class="box4"  panelTitle="预设分类管理" panelHeight="434" panelWidth="320" overflow="auto">
+		 			<center>请选择预分类的班组名称:
+		 			<select style="width: 100px"  id="bzid">
+		 				<option value="0">请选择班组</option>
+		    	           <option value="1" >班组1</option>
+		    	           <option value="2" >班组2</option>
+		    	           <option value="3" >班组3</option>
+		    	           <option value="4" >班组4</option>
+		    	           <option value="5" >班组5</option>
+		    	    </select>
+		    	    </center><br/>
+		 		   <center>请选择预分类的机车类型:
+		 		     <select style="width: 100px" >
+		 		     		<option value="0" >请选择车型</option>
+		 		     		<option value="1" >车型1</option>
+		 		     		<option value="2" >车型2</option>
+		 		     		<option value="3" >车型3</option>
+		 		     </select>
+		 		   </center><br/>
+		 		   <button onclick="toAdd();"><span class="icon_add">新增</span></button>&nbsp;&nbsp;&nbsp;
+		 		   <button  onclick="delPreset();"><span class="icon_delete">删除</span></button>&nbsp;&nbsp;&nbsp;
+		 		   <button  onclick="updPreset();"><span class="icon_edit">修改</span></button>&nbsp;&nbsp;
+		 		   <button onclick="savePresetItem();"><span class="icon_save">保存关系</span></button>
+		 		   		<table class="tableStyle" useCheckBox="false" overflow="auto">
+							<div class="dbList">
+			 				<div class="dtree" width="500px">
+								<script>
+									var id;
+									d = new dTree("d");
+									d.add(0,-1,'预设分类&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript: d.openAll();">全部展开</a>&nbsp;&nbsp;<a href="javascript: d.closeAll();">全部收缩</a>');
+									d.add(0,-1,'根目录');
+									d.add(1,0,'<a href="javascript:;" title="安全操作提示"><input type="checkbox"/>一级分类1</a>',null,'','');
+									d.add(2,1,'<input type="checkbox"/>分工1','#','子项1','frmright');
+									d.add(3,1,'<input type="checkbox"/>分工2','#','子项1','frmright');
+									d.add(4,1,'<input type="checkbox"/>分工3','#','子项1','frmright');	
+									d.add(5,0,'<a href="javascript:;" title="安全操作提示"><input type="checkbox"/>一级分类2</a>',null,'','');
+									d.add(6,5,'<input type="checkbox"/>分工1','#','子项1','frmright');
+									d.add(7,5,'<input type="checkbox"/>分工2','#','子项1','frmright');
+									d.add(8,5,'<input type="checkbox"/>分工3','#','子项1','frmright');	
+									d.add(9,0,'<a href="javascript:;" title="安全操作提示"><input type="checkbox"/>一级分类3</a>',null,'','');
+									d.add(10,9,'<input type="checkbox"/>分工1','#','子项1','frmright');
+									d.add(11,9,'<input type="checkbox"/>分工2','#','子项1','frmright');
+									d.add(12,9,'<input type="checkbox"/>分工3','#','子项1','frmright');																										
+									document.write(d);
+								</script>
+							</div>
+						</div>
+					</table>	
+				</div>
+	 		</td>
+		 	<td align="left">
+		 		<div  class="box4" panelHeight="434" panelTitle="检修项目" overflow="auto">
+		 			<div class="dbList">
+		 				<div class="dtree" width="500px">
+		 					<script>
+								var id;
+								a = new dTree("a");
+								a.add(10,-1,'检修项目&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript: a.openAll();">全部展开</a>&nbsp;&nbsp;<a href="javascript: a.closeAll();">全部收缩</a>');
+								a.add(10,-1,'根目录');
+								a.add(100,10,'<input type="checkbox"/>部件1',null,'','');
+								a.add(101,100,'<input type="checkbox"/>检修项目1','#','子项1','frmright');
+								a.add(102,100,'<input type="checkbox"/>检修项目2','#','子项1','frmright');
+								a.add(103,100,'<input type="checkbox"/>检修项目3','#','子项1','frmright');	
+								a.add(104,100,'<input type="checkbox"/>检修项目4','#','子项1','frmright');
+								a.add(105,10,'<input type="checkbox"/>部件2',null,'','');
+								a.add(106,105,'<input type="checkbox"/>检修项目1','#','子项1','frmright');
+								a.add(107,105,'<input type="checkbox"/>检修项目2','#','子项1','frmright');
+								a.add(108,105,'<input type="checkbox"/>检修项目3','#','子项1','frmright');	
+								a.add(109,105,'<input type="checkbox"/>检修项目4','#','子项1','frmright');
+								a.add(110,10,'<input type="checkbox"/>部件3',null,'','');
+								a.add(111,110,'<input type="checkbox"/>检修项目1','#','子项1','frmright');
+								a.add(112,110,'<input type="checkbox"/>检修项目2','#','子项1','frmright');
+								a.add(113,110,'<input type="checkbox"/>检修项目3','#','子项1','frmright');	
+								a.add(114,110,'<input type="checkbox"/>检修项目4','#','子项1','frmright');
+								a.add(115,10,'<input type="checkbox"/>部件4',null,'','');
+								a.add(116,115,'<input type="checkbox"/>检修项目1','#','子项1','frmright');
+								a.add(117,115,'<input type="checkbox"/>检修项目2','#','子项1','frmright');
+								a.add(118,115,'<input type="checkbox"/>检修项目3','#','子项1','frmright');	
+								a.add(119,115,'<input type="checkbox"/>检修项目4','#','子项1','frmright');																										
+								document.write(a);
+							</script> 
+		 				</div>
+		 			</div>
+		 		</div>
+		 	</td>
+		</tr>
+ 	</table>	
+</body>
+</html>

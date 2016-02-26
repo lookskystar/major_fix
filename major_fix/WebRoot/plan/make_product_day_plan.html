@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!--框架必需start-->
+	<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+	<script type="text/javascript" src="../js/framework.js"></script>
+	<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+	<link  rel="stylesheet" type="text/css" id="skin"/>
+	<!--框架必需end-->
+	
+	<!--截取文字start-->
+	<script type="text/javascript" src="../js/text/text-overflow.js"></script>
+	<!--截取文字end-->
+	
+	<!--修正IE6支持透明PNG图start-->
+	<script type="text/javascript" src="../js/method/pngFix/supersleight.js"></script>
+	<!--修正IE6支持透明PNG图end-->
+	<script type="text/javascript" src="../js/nav/tab.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		var tab = new TabView( {
+			containerId :'tab_menu',
+			pageid :'page',
+			cid :'tab',
+			position :"top"
+		});
+		tab.add( {
+			id :'tab_index0',
+			title :"前一天未完成计划",
+			url :"../plan/unfinish_day_plan.html",
+			isClosed :false
+		});
+
+		tab.add( {
+				id :'tab_index1',
+				title :"班组未完成工作项目",
+				url :"../plan/unfinish_proteam_plan.html",
+				isClosed :false
+		});
+	
+		tab.add( {
+			id :'tab_index2',
+			title :"未处理故障",
+			url :"../plan/unfinish_report.html",
+			isClosed :false
+		});
+		tab.activate("tab_index0");
+	});
+
+   function addTr(){
+      var str="<tr>";
+	  str+="<td align='center'><select><option>维十六</option><option>维十七</option><option>维十八</option><option>维十九</option> </select></td>";
+	  str+="<td align='center'><input type='text' style='width:60px;'/></td>";
+	  str+="<td align='center'><input type='text' style='width:400px;'/></td>";
+	  str+="<td align='center'><select><option>维16队</option><option>维17队</option><option>维18队</option><option>维19队</option></select></td>";
+	  str+="<td align='center'><input type='text' style='width:60px;'/></td>";
+	  str+="<td align='center'><input type='button' value='删除' onclick='delTr(this);'/></td>";
+	  str+="</tr>";
+	  $("#mytable").append(str);
+   }
+
+   function delTr(obj){
+      $(obj).parent().parent().remove();
+   }
+
+   function addMulPlan(){
+	   var num=$("#num").val();
+	   if(num==""){
+	      top.Dialog.alert("请填写要添加计划的数量!",function(){
+		     $("#num").focus();
+		  });
+	   }else{
+	      for(var i=0;i<num;i++){
+		     addTr();
+		  }
+	   }
+	}
+</script>
+</head>
+<body>
+  <div class="position">
+	<div class="center">
+	<div class="left">
+	<div class="right">
+		<span>功能操作：
+               请选择日期：
+			   <input type="text" id="time" name="time" class="Wdate" onclick="WdatePicker(({dateFmt:'yyyy-MM-dd'}))" style="width:120px;" value="2014-01-03"/>&nbsp;&nbsp;
+			    计划数量:<input type="text" style="width:50px;" onkeyup="this.value=this.value.replace(/\D/g,'')" id="num"/>
+			   <input type="button" value="批量添加计划" onclick="addMulPlan();"/>&nbsp;&nbsp;&nbsp;
+			   <input type="button" value="确认提交"/>
+		</span>
+	</div>	
+	</div>	
+	</div>
+</div>	
+	<table width="100%" align="left">
+ 		<tr>
+ 			<td width="650px">
+		 			<div id="tab_menu"></div>
+					<div id="page" style="height:560px;"></div>
+	 		</td>
+		 	<td align="left">
+		 		<div  class="box4" panelHeight="580" panelTitle="生产日计划制定" overflow="auto">
+				   <table class="tableStyle"   headFixMode="true" useMultColor="true" id="mytable">
+				  <tr>
+					<th align="center">交车组</th>
+					<th align="center">车号</th>
+					<th align="center">计划工作项目</th>
+					<th align="center">责任班组</th>
+					<th align="center">计划工时</th>
+					<th align="center">操作</th>
+				</tr>
+				<tr>
+				    <td align="center">
+					   <select class="default">
+					      <option>维十六</option>
+						  <option>维十七</option>
+						  <option>维十八</option>
+						  <option>维十九</option>
+					   </select>
+					</td>
+					<td align="center"><input type="text" style="width:60px;"/></td>
+					<td align="center"><input type="text" style="width:400px;"/></td>
+					<td align="center">
+					   <select class="default">
+					      <option>维16队</option>
+						  <option>维17队</option>
+						  <option>维18队</option>
+						  <option>维19队</option>
+					   </select>
+					</td>
+					<td align="center"><input type="text" style="width:60px;"/></td>
+					<td align="center"><input type="button" value="添加" onclick="addTr();"/></td>
+				</tr>
+			  </table>
+		 		</div>
+		 	</td>
+		</tr>
+ 	</table>	
+	  <link href="../js/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script>
+</body>
+</html>

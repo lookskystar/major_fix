@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/framework.js"></script>
+<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link  rel="stylesheet" type="text/css" id="skin"/>
+<!--框架必需end-->
+<!--截取文字start-->
+<script type="text/javascript" src="../js/text/text-overflow.js"></script>
+<!--截取文字end-->
+<script> 
+	//新建 
+	function add(){
+		top.Dialog.open({URL:"workshop/addStudyData.html",Title:"添加内容 "});
+	}
+	
+	//删除
+		function del(){
+		   top.Dialog.confirm("确认删除?",function(){
+		     top.Dialog.alert("删除成功!");
+		   });
+		}
+</script>
+<body>
+<div class="box4" panelTitle="学习资料" roller="false">
+	<table>
+		<tr>
+			<td>系统：</td>
+			<td><select id="dd">
+				<option value="0">----请选择----</option>
+				<option value="1">走行系统</option>
+				<option value="2">液压系统</option>
+				<option value="3">制动系统</option>
+			</select></td>
+			<td>部件：</td>
+			<td><input type="text" /></td>
+			<td>班组：</td>
+			<td><input type="text" /></td>
+			<td>关键词：</td>
+			<td><input type="text" /></td>				
+			<td><button><span class="icon_find">查询</span></button></td>
+		</tr>
+		<tr>
+			<td colspan="7">
+				<button onclick="add();"><span class="icon_page">新建</span></button>&nbsp;&nbsp;&nbsp;&nbsp;
+				<button onclick="del();"><span class="icon_delete">删除</span></button>
+			</td>
+		</tr>
+	</table>
+</div>
+<div>
+	<table class="tableStyle" sortMode="true" headFixMode="true" useMultColor="true" useCheckBox="true">
+		<tr align="center">
+			<th width="2%">序号</th>
+			<th width="10%">系统</th>			
+			<th width="13%">部件</th>
+			<th width="25%">学习题目</th>
+			<th width="30%">学习内容</th>
+			<th width="10%">班组</th>
+			<th width="10%">操作</th>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox"/></td>
+			<td>走行系统</td>			
+			<td>车架</td>
+			<td>车轮学习</td>
+			<td>
+				<a href="javascript:;" title="车轮是人类在搬运东西的劳动实践中逐渐地发现的。随着武器及生产工具的改进，猎取的东西多了，
+				把他们运到目的地就困难了。于是，有人就想出了主意，从地上拣了几根折断的粗树枝，用藤蔓将这些
+				树枝连接在一起，然后把猎物放在上面，双手抓住两根长树枝拖着走，这比用肩扛背驮轻快多了。">
+					<span class="text_slice" style="width:200px;">车轮是人类在搬运东西的劳动实践中逐渐地发现的。随着武器及生产工具的改进，猎取的东西多了，
+					把他们运到目的地就困难了。于是，有人就想出了主意，从地上拣了几根折断的粗树枝，用藤蔓将这些
+					树枝连接在一起，然后把猎物放在上面，双手抓住两根长树枝拖着走，这比用肩扛背驮轻快多了。
+					</span>
+				</a>
+			</td>
+			<td>走行制动组</td>
+			<td>
+				<span class="img_view hand" title="查看" onclick="add();"></span>
+				<span class="img_edit hand" title="修改" onclick="add();"></span>
+				<span class="img_delete hand" title="删除" onclick="del();"></span></td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox"/></td>
+			<td>液压系统</td>		
+			<td>千斤顶</td>
+			<td>千斤顶学习</td>
+			<td><a href="javascript:;" title="千斤顶是一种用钢性顶举件作为工作装置，通过顶部托座或底部托爪在行程内顶升重物的轻小起重设
+					备。千斤顶主要用于厂矿、交通运输等部门作为车辆修理及其它起重、支撑等工作。其结构轻巧坚固、灵
+					活可靠，一人即可携带和操作。">
+					<span class="text_slice" style="width:200px;">千斤顶是一种用钢性顶举件作为工作装置，通过顶部托座或底部托爪在行程内顶升重物的轻小起重设
+					备。千斤顶主要用于厂矿、交通运输等部门作为车辆修理及其它起重、支撑等工作。其结构轻巧坚固、灵
+					活可靠，一人即可携带和操作。
+					</span>
+				</a>
+			</td>
+			<td>液压电气组</td>
+			<td><span class="img_view hand" title="查看" onclick="add();"></span>
+				<span class="img_edit hand" title="修改" onclick="add();"></span>
+				<span class="img_delete hand" title="删除" onclick="del();"></span>
+			</td>
+		</tr>
+	</table>
+</div>
+ 
+<div style="height:35px;">
+	<div class="float_left padding5">
+	</div>
+	<div class="float_right padding5 paging">
+		<div class="float_left padding_top4">
+		<span class="paging_disabled"><a href="javascript:;">上一页</a></span>
+		<span class="paging_current"><a href="javascript:;">1</a></span>
+		<span><a href="javascript:;">2</a></span>
+		<span><a href="javascript:;">3</a></span>
+		<span><a href="javascript:;">4</a></span>
+		<span><a href="javascript:;">5</a></span>
+		<span>...</span>
+		<span><a href="javascript:;">20</a></span>
+		<span><a href="javascript:;">下一页</a></span>&nbsp;每页
+		</div>
+		<div class="float_left"><select autoWidth="true"><option>50</option><option>100</option><option>150</option></select></div>
+		<div class="float_left padding_top4">条记录</div>
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+</div>					
+</body>

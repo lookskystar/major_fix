@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/framework.js"></script>
+<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link  rel="stylesheet" type="text/css" id="skin"/>
+<!--框架必需end-->
+
+<!--修正IE6不支持PNG图start-->
+<script type="text/javascript" src="../js/method/pngFix/supersleight.js"></script>
+<!--修正IE6不支持PNG图end-->
+
+<!--鼠标移入变色start-->
+<script>
+	$(function(){
+		$(".navIcon").hover(function(){
+			$(this).addClass("navIcon_hover");
+		},function(){
+			$(this).removeClass("navIcon_hover");
+		});
+
+		$("#finish").click(function(){
+		    $("#finishShow").show();
+			$("#unfinishShow").hide();
+		});
+
+		$("#unfinish").click(function(){
+		    $("#finishShow").hide();
+			$("#unfinishShow").show();
+		});
+	})
+</script>
+<!--鼠标移入变色end-->
+<body>
+  <div>
+     <table class="tableStyle"   headFixMode="true" useMultColor="true" id="mytable">
+	    <tr>
+		   <th align="center" width="20%">名称</th>
+		   <th align="center">内容</th>
+		</tr>
+	    <tr>
+		  <td align="center">交车组</td>
+		  <td align="center"><input type="text" value="维十六"/></td>
+		</tr>
+		<tr>
+		  <td align="center">车号</td>
+		  <td align="center"><input type="text" value="13030"/></td>
+		</tr>
+		<tr>
+		  <td align="center">计划工作项目</td>
+		  <td align="center"><input type="text" value="传动轴脱漆、打磨，探伤后刷漆" style="width:280px;"/></td>
+		</tr>
+	    <tr>
+		  <td align="center">责任班组</td>
+		  <td align="center"><input type="text" value="维16队"/></td>
+		</tr>
+		<tr>
+		  <td align="center">计划工时(人*工时)</td>
+		  <td align="center"><input type="text" value="4*2"/></td>
+		</tr>
+		<tr>
+		  <td align="center">计划内工作项目完成情况</td>
+		  <td align="center"><input type="radio" name="status" id="finish">完成&nbsp;&nbsp;<input type="radio" name="status" id="unfinish">未完成</td>
+		</tr>
+		<tr style="display:none;" id="finishShow">
+		  <td align="center">完成情况</td>
+		  <td align="center">使用工时：<input type="text" style="width:30px;"/>人*工时</td>
+		</tr>
+		<tr style="display:none;" id="unfinishShow">
+		  <td align="center">未完成工作的具体原因说明</td>
+		  <td align="center"><input type="checkbox"/>报等材料&nbsp;<input type="checkbox"/>缺工具&nbsp;<input type="checkbox"/>技术协助&nbsp;<input type="checkbox"/>工时不够<br>其他原因：<input type="text" style="width:150px;"/></td>
+		</tr>
+		<tr>
+		  <td align="center">备注</td>
+		  <td align="center"><input type="text"/></td>
+		</tr>
+		<tr>
+		  <td align="center">计划外完成工作项目</td>
+		  <td align="center"><input type="text"/></td>
+		</tr>
+		<tr>
+		  <td align="center">第二天需要协助或配合的工作项目</td>
+		  <td align="center"><input type="text"/></td>
+		</tr>
+		 <tr>
+		  <td colspan="2" align="center"><button><span class="icon_ok">确认</span></button></td>
+		</tr>
+	 </table>
+  </div>
+  <link href="../js/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script>
+</body>
+</html>
